@@ -20,42 +20,10 @@
 </head>
 
 <body>
-
-  <!-- Login Modal -->
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="loginModalLabel">Login</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="/auth/login" method="post">
-            <div class="mb-3 mt-2">
-              <input type="text" class="form-control" name="loginEmail" id="loginMail" placeholder="Email">
-              <div id="loginMailReq" class="required text-danger">Email cannot be blank</div>
-              <div id="loginMailFormat" class="required text-danger">Invalid Email</div>
-            </div>
-            <div class="mb-2">
-              <input type="password" class="form-control" name="loginPassword" id="loginPass" placeholder="Password">
-              <div id="loginPassReq" class="required text-danger">Password cannot be blank</div>
-              <a class="text-decoration-none mt-3" href="">Forgot Password?</a>
-            </div>
-            <button id="loginFormSubmit" class="btn btn-secondary mt-2" type="submit">Submit</button>
-          </form>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div class="px-2 pb-2">
-          Don't have an account? <a class="text-decoration-none" href="/signup">Signup</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-secondary px-5 py-2">
     <!-- <img class="img-fluid rounded-circle logo" src="/static/images/Logo.jpeg"s alt="Health&Gen Store Logo"> -->
-    <a href="/" class="navbar-brand text-white ms-1"><span style"></span> M.A.S.K International Limited</a>
+    <a href="/" class="navbar-brand text-white ms-1">M.A.S.K International Limited</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

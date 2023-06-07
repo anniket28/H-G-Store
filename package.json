@@ -4,7 +4,8 @@
   "description": "This is an ecommerce store where a user can buy Health and General Based Items.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "Anniket Bhalla",
   "license": "ISC",

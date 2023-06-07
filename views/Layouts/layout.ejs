@@ -1,0 +1,167 @@
+<!-- Base File For Health and Gen Store -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title %> | Health&Gen Store
+  </title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/static/images/Favicon.png" type="image/png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="loginModalLabel">Login</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/auth/login" method="post">
+            <div class="mb-3 mt-2">
+              <input type="text" class="form-control" name="loginEmail" id="loginMail" placeholder="Email">
+              <div id="loginMailReq" class="required text-danger">Email cannot be blank</div>
+              <div id="loginMailFormat" class="required text-danger">Invalid Email</div>
+            </div>
+            <div class="mb-2">
+              <input type="password" class="form-control" name="loginPassword" id="loginPass" placeholder="Password">
+              <div id="loginPassReq" class="required text-danger">Password cannot be blank</div>
+              <a class="text-decoration-none mt-3" href="">Forgot Password?</a>
+            </div>
+            <button id="loginFormSubmit" class="btn btn-secondary mt-2" type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="px-2 pb-2">
+          Don't have an account? <a class="text-decoration-none" href="/signup">Signup</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-secondary px-5 py-2">
+    <img class="img-fluid rounded-circle logo" src="/static/images/Logo.jpeg" alt="Health&Gen Store Logo">
+    <a href="/" class="navbar-brand text-white ms-1">Health&Gen Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" id="home" href="/"><svg xmlns="http://www.w3.org/2000/svg"
+              width="20" height="20" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+              <path fill-rule="evenodd"
+                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+            </svg><i class="bi bi-house-fill"></i><span class="ms-1">Home</span></a>
+        </li>
+        <!-- About Us -->
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" id="about" href="/about-us"><svg
+              xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+              class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+              <path
+                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+            </svg><i class="bi bi-info-circle-fill"></i><span class="ms-1">About Us</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" id="products" href="/products/physio"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
+          <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+          </svg><i class="bi bi-box"></i><span class="ms-1">Products</span></a>
+        </li>
+        <!-- Contact Dropdown -->
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle bg-transparent" href="javascript:void(0)" type="button"
+            id="contactDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Contact Us
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+            <!-- Call Us -->
+            <a class="dropdown-item d-flex align-items-center" href="tel:+91 8427224992"><svg
+                xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+              </svg><i class="bi bi-telephone-fill"></i><span class="ms-1">Call Us</span></a>
+            <div class="dropdown-divider"></div>
+            <!-- Email Us -->
+            <a class="dropdown-item d-flex align-items-center" href="mailto:sanjayzrk3@gmail.com"><svg
+                xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                <path
+                  d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+              </svg><i class="bi bi-envelope-fill"></i><span class="ms-1">Email Us</span></a>
+          </ul>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script>
+    // Login Form
+    // Email Validation
+    function ValidateEmail(mail) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return (true)
+      }
+      return (false)
+    }
+    document.getElementById('loginFormSubmit').addEventListener('click', (event) => {
+      // 1.Email
+      if (document.getElementById('loginMail').value.length == 0) {
+        document.getElementById('loginMail').style.borderColor = 'red'
+        document.getElementById('loginMailReq').style.display = 'block'
+        document.getElementById('loginMailFormat').style.display = 'none'
+        event.preventDefault()
+      }
+      else if (document.getElementById('loginMail').value.length != 0) {
+        if (ValidateEmail(document.getElementById('loginMail').value)) {
+          document.getElementById('loginMail').style.borderColor = '#ced4da'
+          document.getElementById('loginMailReq').style.display = 'none'
+          document.getElementById('loginMailFormat').style.display = 'none'
+        }
+        else {
+          document.getElementById('loginMail').style.borderColor = 'red'
+          document.getElementById('loginMailReq').style.display = 'none'
+          document.getElementById('loginMailFormat').style.display = 'block'
+          event.preventDefault()
+        }
+      }
+      // 2.Password
+      if (document.getElementById('loginPass').value.length == 0) {
+        document.getElementById('loginPass').style.borderColor = 'red'
+        document.getElementById('loginPassReq').style.display = 'block'
+        event.preventDefault()
+      }
+      else if (document.getElementById('loginPass').value.length != 0) {
+        document.getElementById('loginPass').style.borderColor = '#ced4da'
+        document.getElementById('loginPassReq').style.display = 'none'
+      }
+    })
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

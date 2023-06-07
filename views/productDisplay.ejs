@@ -1,0 +1,31 @@
+<!-- Product Description Page For Health and Gen Store -->
+
+<!-- Including Layout File -->
+<%- include('Layouts/layout.ejs') %>
+
+<!-- Product Display -->
+<section class="main product">
+    <div class="d-flex justify-content-evenly">
+        <img class="img-fluid img-thumbnail" src="/<%= product.image %>" alt="<%= product.name %>">
+        <div id="aboutProduct" class="d-flex flex-column align-items-center justify-content-center">
+            <h3 class="text-start"><%= product.name %></h3>
+            <h4>Price : Rs. <span id="prodPrice">100</span></h4>
+            <div>
+                <button class="product-category p-1 mt-2 btn btn-secondary">CATEGORY - <%= product.category %></button>
+            </div>
+            <p class="w-75 text-center mt-3 product-desc"><%= product.description %></p>
+        </div>
+    </div>
+</section>
+
+<!-- Including Footer File -->
+<%- include('Layouts/footer.ejs') %>
+
+<!-- JS -->
+<script>
+    // About Product
+    var colors = ['#800080', '#800000', '#8B0000','#000080','#00008B','#006400','#191970','#4B0082','#0000CD','#FF0000'];
+    var random_color = colors[Math.floor(Math.random() * colors.length)];
+    document.getElementById('aboutProduct').style.color = random_color;
+</script>
+<!-- <%= product.price %> -->

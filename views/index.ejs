@@ -1,0 +1,63 @@
+<!-- Home Page For Health and Gen Store -->
+
+<!-- Including Layout File -->
+<%- include('Layouts/layout.ejs') %>
+
+<!-- Home -->
+<section class="main">
+    <div class="jumbotron">
+      <h1><span style="color: blue;">Health</span><span style="color: red;">&</span><span style="color: green;">Gen</span> <span style="color: rgb(61, 61, 61);">Store</span></h1>
+      <h3>A Health and General Items Store</h3>
+    </div>
+    <h3 class="mt-2">From Medical Items and Gym Equipments to General Items</h3>
+    <h3 class="mt-2">You can purchase them all here.</h3>
+    <!-- Product Categories Display -->
+    <div class="row justify-content-evenly mt-5 product-categories-display">
+      <div class="card w-25">
+        <img src="/static/images/physio.png" style="width: 60%; margin: auto; margin-top: 30px; padding: 15px; margin-bottom: 10px;" class="img-fluid img-thumbnail" alt="Physiotherapy Items">
+        <h3 class="card-title">Physiotherapy Items</h3>
+        <div class="card-body">
+          Physiotherapy Items or Machines are basically used for rehabilitation purpose, injury prevention and in health and fitness field. These machines help to restore, maintain, and make the most of a patient's mobility, function, and well-being.
+        </div>
+      </div>
+        <div class="card w-25">
+          <img src="/static/images/cardio.png" style="width: 60%; margin: auto; margin-top: 30px; padding: 15px; margin-bottom: 10px;" class="img-fluid img-thumbnail" alt="Cardiology Items">
+          <h3 class="card-title">Cardiology Items</h3>
+          <div class="card-body">
+            Cardiology Machines deals with diagnosis and treatment of conditions such as congenital heart defects, coronary artery disease, electro-physiology, heart failure and valvular heart disease.
+          </div>
+        </div>
+      <div class="card w-25">
+        <img src="/static/images/radio.jpeg" style="width: 60%; margin: auto; margin-top: 30px; padding: 15px; margin-bottom: 10px;" class="img-fluid img-thumbnail" alt="Radiology Items">
+        <h3 class="card-title">Radiology Items</h3>
+        <div class="card-body">
+          Radiology items or machines are used to diagnose or treat patients by recording images of the internal structure of the body to assess the presence or absence of disease, foreign objects, and structural damage or anomaly.
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-evenly mt-5 product-categories-display">
+    <div class="card w-25">
+      <img class="img-fluid img-thumbnail" style="width: 60%; margin: auto; margin-top: 30px; padding: 15px; margin-bottom: 10px;" src="/static/images/wheelchair.png" alt="Wheelchairs">
+      <h3 class="card-title">Wheelchairs</h3>
+      <div class="card-body">
+        Wheelchairs are assistive devices that can help promote mobility and enhance quality of life for people who have some difficulties in walking and this mobility opens up opportunities for wheelchair users to study, work, engage in social activities
+      </div>
+    </div>
+      <div class="card w-25">
+        <img src="/static/images/general.png" style="width: 60%; margin: auto; margin-top: 30px; padding: 15px; margin-bottom: 10px;" class="img-fluid img-thumbnail" alt="General Items">
+        <h3 class="card-title">General Items</h3>
+        <div class="card-body">
+          General items are the items used in day-to-day life normally. These items mostly include the basic items such as handwash, thermometer, mask and other such things used at home or at hospitals or somewhere else.
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Including Footer File -->
+<%- include('Layouts/footer.ejs') %>
+
+<!-- JS -->
+<script>
+    // Active Link
+    document.getElementById('home').classList.add('active-link')
+</script>
